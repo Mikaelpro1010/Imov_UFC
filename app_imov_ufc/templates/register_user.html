@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'register-user' %}" method="post">
+        <h1>Cadastro de Usuário</h1>
+        <label for="">Nome:</label>
+        <input name="nome" type="text" class="form-control-sm" placeholder="Nome">
+
+        <label for="">Email:</label>
+        <input name="email" type="email" class="form-control-sm" placeholder="Email">
+
+        <label for="">Telefone:</label>
+        <input name="contato" type="text" placeholder="(XX) XXXXXXXXX">
+
+        <label for="">Descrição:</label>
+        <input name="descricao" type="textarea" placeholder="Descrição">
+
+        <button type="submit" class="btn btn-primary"></button>
+    </form>
+</body>
+</html>
