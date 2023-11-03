@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined:wght@400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans NKo Unjoined';
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: auto;
+    justify-content: center;
+    align-items: center;
+    background: #201b2c;
+}
+.container {
+    width: 70%;
+    height: 90vh;
+    display: flex;
+    box-shadow: 5px 5px 10px #201b2c;
+    
+}
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1b2c;
+    padding: 1rem;
+    flex-direction: column;
+}
+.form-image > h1{
+    color: #00ff88;
+}
+.form-image img{
+    width: 31rem;
+}
+.form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    background: #2f2841;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+.form-header{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+.login-button{
+    display: auto;
+    align-items: center;
+
+}
+.login-button button{
+    border: none;
+    background-color: #00ff88;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+.login-button button:hover{
+    background-color:  #00ff88;
+}
+.login-button button a{
+    text-decoration: none;
+    color: #2b123b;
+}
+.title > h1 {
+    color: #00ff88;
+
+}
+.form-header h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #f0ffffde;
+    margin: 0;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: #2b123b;
+}
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0rem 0;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    color: #f0ffffde;
+    background: #514869;
+}
+.input-box >input::placeholder{
+    color: #f0ffff94
+}
+.input-box label{
+    font-size: 10pt;
+
+    color: #f0ffffde;
+}
+.gender-tittle h6{
+    font-size: 11pt;
+    font-weight: 300;
+    color:#f0ffffde;
+}
+
+.gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 0.9rem;
+    
+}
+.gender-input{
+    display: center;
+    align-items: center;
+}
+.gender-input input{
+    margin-right: 0.35rem;
+}
+.gender-input label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 13px;
+    color: #f0ffffde;
+}
+.gender-input input[type=radio] {
+    display: none;
+}
+.gender-input label:before {
+    content: "";
+    display: inline-block;
+ 
+    width: 16px;
+    height: 16px;
+  
+    border-radius:100%;
+ 
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    background-color: #514869;
+    box-shadow: inset 0px 2px 3px 0px #2c0642, 0px 0px 0px 0px #030303;
+}
+.gender-input input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #f0ffffde;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+}
+.continue-button > button {
+    width: 100%;
+    padding: 15px 0px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #f0ffffde;
+    background: #2b0148 ;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #2c0642;
+}
+.continue-button > button > a{
+    color: #f0ffffde;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1330px){
+    .form-image{
+        display: none;
+    }
+    .container {
+        width: 50%;
+    }
+    .form{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1064px){
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group{
+        overflow-y: scroll;
+        overflow-wrap: nowrap;
+        max-height: 11rem;
+        padding-right: 5rem;
+
+    }
+    .gender-input{
+        margin-top: 2rem;
+    }
+    .gender-group{
+        flex-direction: flex;
+    }
+    .gender-input{
+        margin-top: 0.05rem;
+    }
+}
