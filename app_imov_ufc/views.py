@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http.response import HttpResponse
 from .models import Apartment
 from django.contrib.auth.models import User
@@ -20,7 +20,7 @@ def login(request):
             #metodo login para realizar login do usuário
             login_django(request, user)
 
-            return HttpResponse('Autenticado')
+            return redirect('home')
         else:
             return HttpResponse('Usuário ou senha inválidos!')
 
@@ -49,7 +49,7 @@ def registerUser(request):
             user.save()
 
             
-            return HttpResponse('Usuário cadastro com sucesso!')
+            return redirect('login')
 
 #usando o metodo login_required() para verificar se o usuário tem permissão para acessar a página
 @login_required(login_url='/auth/login/')
