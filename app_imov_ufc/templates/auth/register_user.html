@@ -2,86 +2,88 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/user.css' %}">
-  <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <title>Cadastro</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="form-image">
-      <h1>IMOV UFC</h1>
-      <img src="{% static 'img/login.svg' %}">
-    </div>
-    <div class="form">
-        <form action="{% url 'registerUser' %}" method="POST">
-            {% csrf_token %}
-            <div class="form-header">
-                <div class="title">
-                    <h1>Cadastre-se</h1>
-                </div>
-                <div class="login-button">
-                    <button><a href="">Entrar</a></button>
-                </div>
+    <div class="container">
+        <div class="form-image">
+            <h1>IMOV UFC</h1>
+            <img src="{% static 'img/login.svg' %}">
+        </div>
+        <div class="form">
+            <form action="{% url 'register-user' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="">Entrar</a></button>
+                    </div>
                 </div>
                 <div class="input-group">
-                <div class="input-box">
-                    <label for="firstname">Nome</label>
-                    <input id="firstname" type="text" name="username" placeholder="Digite seu nome" required>
-                </div>
-                
-                <div class="input-box">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" name="email" placeholder="Digite seu email" required>
+                    <div class="input-box">
+                        <label for="firstname">Nome</label>
+                        <input id="firstname" type="text" name="username" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email" placeholder="Digite seu email" required>
+                    </div>
+
+                    <!-- <div class="input-box">
+                        <label for="number">Telefone</label>
+                        <input id="number" type="tel" name="number" placeholder="Digite seu telefone" required>
+                    </div> -->
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <!-- <div class="input-box">
+                        <label for="password">Confirme sua senha</label>
+                        <input id="password" type="password" name="confirm_password" placeholder="Confirme sua senha" required>
+                    </div> -->
                 </div>
 
-                <!-- <div class="input-box">
-                    <label for="number">Telefone</label>
-                    <input id="number" type="tel" name="number" placeholder="Digite seu telefone" required>
+                <!-- <div class="gender-input">
+                <div class="gender-tittle">
+                    <h6>Gênero</h6>
+                </div>
+
+                <div class="gender-group">
+                    
+                    <div class="gender-input">
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Feminino</label>
+                    </div>
+
+                    <div class="gender-input">
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">Masculino</label>
+                    </div>
+                    
+                    <div class="gender-input">
+                    <input type="radio" id="others" name="gender">
+                    <label for="others">Outros</label>
+                    </div>
+                </div>
                 </div> -->
 
-                <div class="input-box">
-                    <label for="password">Senha</label>
-                    <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                <div class="continue-button">
+                    <input type="submit" value="Finalizar Cadastro"></input>
                 </div>
-                <!-- <div class="input-box">
-                    <label for="password">Confirme sua senha</label>
-                    <input id="password" type="password" name="confirm_password" placeholder="Confirme sua senha" required>
-                </div> -->
-            </div>
-
-            <!-- <div class="gender-input">
-            <div class="gender-tittle">
-                <h6>Gênero</h6>
-            </div>
-
-            <div class="gender-group">
-                
-                <div class="gender-input">
-                <input type="radio" id="female" name="gender">
-                <label for="female">Feminino</label>
-                </div>
-
-                <div class="gender-input">
-                <input type="radio" id="male" name="gender">
-                <label for="male">Masculino</label>
-                </div>
-                
-                <div class="gender-input">
-                <input type="radio" id="others" name="gender">
-                <label for="others">Outros</label>
-                </div>
-            </div>
-            </div> -->
-            
-            <div class="continue-button">
-                <input type="submit" value="Finalizar Cadastro"></input>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 </body>
+
 </html>

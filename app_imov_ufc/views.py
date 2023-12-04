@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import  login as login_django
 from django.contrib.auth.decorators import  login_required
+from django.contrib.auth import logout
 
 #criando metodo para o usuário poder realizar login no sistema
 def login(request):
@@ -22,7 +23,7 @@ def login(request):
 
             return redirect('home')
         else:
-            return HttpResponse('Usuário ou senha inválidos!')
+            return redirect('register-user')
 
 #criando metodo para cadastrar o usuário no sistema
 def registerUser(request):
@@ -58,7 +59,7 @@ def home(request):
 
 
 #usando o metodo login_required() para verificar se o usuário tem permissão para acessar a página
-@login_required(login_url='/login')
+@login_required(login_url='/auth/login')
 def registerApartment(request):
     if request.method == "GET":
         return render(request, 'register_apartment.html')
@@ -78,3 +79,8 @@ def registerApartment(request):
 
     #Retornar os dados para a página de listagem de apartamentos
     return render(request, 'apartments.html', apartments)
+
+#criando método que possibilite ao usuário se deslogar do sistema
+def logout_view(request):
+    logout(request)
+    return redirect('login')

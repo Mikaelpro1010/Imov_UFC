@@ -21,9 +21,10 @@ from app_imov_ufc import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login', views.login, name='login'),
-    path('register-user', views.registerUser, name='registerUser'),
+    path('register-user', views.registerUser, name='register-user'),
     path('home', views.home, name='home'),
     path('register-apartment/', views.registerApartment, name='register_apartment'),
     path('list-apartments/', views.registerApartment, name='list_apartments'),
+    path('auth/logout/', views.logout_view, name='logout'),
 ]
 
